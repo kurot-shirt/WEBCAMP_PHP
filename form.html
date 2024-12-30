@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form</title>
+    <title>ログイン機能付きタスク</title>
 </head>
 <body>
-    <h1>form test</h1>
-    <form action="./1st.php" method="get">
-        入力 <input name="input_text"><br>
-        <button>送信する</button>
-    </form>
+   <h1>ログイン</h1>
+   <form action="./1st.php" method="get">
+    email:<input type="text" name="email"><br>
+    password:<input type="password" name="password"><br>
+    radio<label><input name="radio" type="radio" value="1">1</label><br>
+    checkbox<label><input type="checkbox" name="check" value="1">1</label><br>
+    select<select name="sele">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select><br>
+    text<textarea name="tarea" clos="50" row="5"></textarea><br>
+    
+    <button>ログインする</button>
+   </form> 
 </body>
 </html>
