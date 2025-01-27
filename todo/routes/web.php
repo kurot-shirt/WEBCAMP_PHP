@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,10 @@ use App\Http\Controllers\WelcomeController;
 //    return view('welcome');
 //});
 
-Route::get('/', [WelcomeController::class, 'index']);
+Route::get('/', [AuthController::class, 'index'])->name('front.index');
+Route::post('/login', [AuthController::class, 'login']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/todo/list', [ListController::class, 'list']);
+    Route::post('/register', [ListCntroller::class, 'register']);
+    Route::get('/logout', [AuthController::class, 'logout']);
+});
